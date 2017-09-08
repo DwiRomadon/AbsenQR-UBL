@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:tools="http://schemas.android.com/tools"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+tools:context="com.project.absenubl.Absen">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edKdHari"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Kode Hari"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edJamAwal"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Jam Awal"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/edJamAkhir"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Jam Akhir"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/edRuang"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Ruang"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/edKelas"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Kelas"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/edNidn"
+                    android:visibility="gone"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:inputType="numberDecimal"
+                    android:hint="NIDN"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edKdMK"
+                    android:visibility="gone"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:inputType="numberDecimal"
+                    android:hint="Kode Matakuliah"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edSks"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="SKS"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edJumlahHadir"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Jumlah Hadir"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/blnTahunAbsen"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Bulan Tahun Absen"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btnSubmit"
+                    android:text="Mulai"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_rounded"
+                    android:layout_weight="0.15" />
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edKdProdi"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Kode Prodi"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edMingguKe"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Minggu Ke"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edOperator"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Operator"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edThnSem"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Tahun Semester"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edIdJadwal"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Id Jadwal"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edTglAbsen"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Tanggal Absen"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-15dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="208dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/edTglInput"
+                    android:layout_width="208dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:inputType="numberDecimal"
+                    android:hint="Tanggal Input"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/idAbsen"
+                android:layout_width="match_parent"
+                android:textColor="@color/bg_screen2"
+                android:inputType="textAutoComplete"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:hint="Id Absen"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/txtKelas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/bg_screen2"
+                android:hint="Kelas"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/txtPertemuan"
+                android:layout_width="match_parent"
+                android:inputType="textAutoComplete"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textColor="@color/bg_screen2"
+                android:hint="Pertemuan Ke" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/txtNPM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="NPM"
+                android:textColor="@color/bg_screen2"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:editable="false"/>
+        </android.support.design.widget.TextInputLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan"
+            android:textColor="#fff"
+            android:layout_marginTop="45dp"
+            android:id="@+id/btnScan"
+            android:background="@drawable/btn_rounded"/>
+    </LinearLayout>
+</RelativeLayout>
+</ScrollView>
