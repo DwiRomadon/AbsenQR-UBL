@@ -183,7 +183,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
         dayFormat = new SimpleDateFormat("EEEE", Locale.US);
 
         if(dayFormat.format(calendar.getTime()).equals("Sunday")){
-            kodeHari = "0";
+            kodeHari = "7";
         }else if(dayFormat.format(calendar.getTime()).equals("Monday"))  {
             kodeHari = "1";
         }else if(dayFormat.format(calendar.getTime()).equals("Tuesday"))  {
@@ -276,10 +276,12 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                         txtIdJadwal.setText(idJadwal);
                         getSKS(KodeMk);
                         getMingguKe(KodeMk);
+                        Toast.makeText(getApplicationContext(),
+                                "Sukses mengambil data silahkan tekan tombol mulai", Toast.LENGTH_LONG).show();
                     }else {
                         String error_msg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(),
-                                error_msg, Toast.LENGTH_LONG).show();
+                                error_msg + " Atau tutup aplikasi dan masuk kembali", Toast.LENGTH_LONG).show();
                     }
 
                 }catch (JSONException e){
@@ -574,7 +576,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                     btnScan.setEnabled(true);
                 }else {
                     Toast.makeText(getApplicationContext(),
-                            "Waktu untuk absen sudah habis !, Silahkan hubungi administrator", Toast.LENGTH_LONG)
+                            "Opps.... Maaf Server Tidak Meresponse. Silahkan Hubungi Administrator.", Toast.LENGTH_LONG)
                             .show();
                 }
             }
@@ -590,7 +592,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                     intentIntegrator.initiateScan();
                 } else {
                     Toast.makeText(getApplicationContext(),
-                            "Maaf waktu untuk absen sudah habis !, Silahkan hubungi administrator", Toast.LENGTH_LONG)
+                            "Opps.... Maaf Server Tidak Meresponse. Silahkan Hubungi Administrator.", Toast.LENGTH_LONG)
                             .show();
                 }
             }
