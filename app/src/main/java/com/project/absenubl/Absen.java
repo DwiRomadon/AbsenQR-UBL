@@ -823,19 +823,25 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                     JSONObject jObj = new JSONObject(response);
                     boolean error = jObj.getBoolean("error");
 
-                    if (!error) {
-                        String errorrr = jObj.getString("success");
-                        Toast.makeText(getApplicationContext(),
-                                errorrr, Toast.LENGTH_LONG).show();
-                    } else {
-
-                        // Error occurred in registration. Get the error
-                        // message
-                        String errorMsg = jObj.getString("error_msg");
+                    if(error){
+                        String errorMsg = jObj.getString("pesan_error");
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
+                    }else {
+                        if (!error) {
+                            String errorrr = jObj.getString("success");
+                            Toast.makeText(getApplicationContext(),
+                                    errorrr, Toast.LENGTH_LONG).show();
+                        } else {
 
+                            // Error occurred in registration. Get the error
+                            // message
+                            String errorMsg = jObj.getString("error_msg");
+                            Toast.makeText(getApplicationContext(),
+                                    errorMsg, Toast.LENGTH_LONG).show();
+                        }
                     }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
