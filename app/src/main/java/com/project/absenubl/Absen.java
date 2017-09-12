@@ -61,6 +61,8 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
     private EditText txtTglAbsen;
     private EditText txtTglInput;
     private EditText txtBlnThnAbse;
+    private EditText txtBeritaAcara;
+    private Button btnKirim;
 
     //private Spinner spnBlnTahunAbsen;
 
@@ -131,6 +133,10 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
         txtTglAbsen         = (EditText) findViewById(R.id.edTglAbsen);
         txtTglInput         = (EditText) findViewById(R.id.edTglInput);
         txtBlnTahunAbsen    = (EditText) findViewById(R.id.blnTahunAbsen);
+
+        txtBeritaAcara      = (EditText) findViewById(R.id.beritaAcara);
+        btnKirim            = (Button) findViewById(R.id.btnSubmitBerita);
+        btnKirim.setEnabled(false);
 
         //spnBlnTahunAbsen    = (Spinner) findViewById(R.id.spnBlnThnAbsen);
 
@@ -408,6 +414,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                     if(!error){
                         String mingguKe       = jObj.getString("mingguke");
                         txtMingguKe.setText(mingguKe);
+                        pertemuanKe.setText(mingguKe);
                     }else {
                         String error_msg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(),
@@ -454,10 +461,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
 
      */
 
-    public void storeDataToServer(final String kdHari, final String tglAbsen, final String jamAwal,final String jamAkhir,final String ruang,
-                                  final String kelas, final String nidn,final String kodeMK,final String sks,final String jmlhadir,
-                                  final String blnthnSem,final String kdProdi,final String mingguKe,final String operator,final String thnSem,
-                                  final String idJadwal,final String tglInput){
+    public void updateBeritaAcara(final String beritaAcara, final String kodeMk, final String mingguKe){
 
         // Tag used to cancel the request
         String tag_string_req = "req";
@@ -480,7 +484,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                     if (!error) {
                         String errorrr = jObj.getString("success");
                         Toast.makeText(getApplicationContext(),
-                                errorrr, Toast.LENGTH_LONG).show();
+                                errorrr + ", Berhasil mengirim berita acara", Toast.LENGTH_LONG).show();
                     } else {
 
                         // Error occurred in registration. Get the error
@@ -513,24 +517,10 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
 
                         */
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("tag", "inputabsendosen");
-                params.put("kdhari", kdHari);
-                params.put("tglAbsen", tglAbsen);
-                params.put("jamAwal", jamAwal);
-                params.put("jamakhir", jamAkhir);
-                params.put("ruang", ruang);
-                params.put("kelas", kelas);
-                params.put("nidn", nidn);
-                params.put("kdmk", kodeMK);
-                params.put("sks", sks);
-                params.put("jmlhadir", jmlhadir);
-                params.put("blnthnabsen", blnthnSem);
-                params.put("kdProdi", kdProdi);
+                params.put("tag", "UpdateBeritaAcara");
+                params.put("beritaacara", beritaAcara);
+                params.put("kodemk", kodeMk);
                 params.put("mingguKe", mingguKe);
-                params.put("operator", operator);
-                params.put("thnSem", thnSem);
-                params.put("idJadwal", idJadwal);
-                params.put("tglInput", tglInput);
                 return params;
             }
 
@@ -574,6 +564,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                             jumlahHadir,blnTahunSem,kdProdi,mingguKe,operator,thnsem,idJadwal,tglInput);
                     getKode(kodeMK);
                     btnScan.setEnabled(true);
+                    btnKirim.setEnabled(true);
                 }else {
                     Toast.makeText(getApplicationContext(),
                             "Opps.... Maaf Server Tidak Meresponse. Silahkan Hubungi Administrator.", Toast.LENGTH_LONG)
@@ -598,6 +589,20 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
             }
         });
 
+        btnKirim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String beritaAcaranya = txtBeritaAcara.getText().toString();
+                String kodeMK         = txtKodeMatkul.getText().toString();
+                String mingguKe       = txtMingguKe.getText().toString();
+
+                //if(!beritaAcaranya.isEmpty() && !kodeHari.isEmpty() && mingguKe.isEmpty()){
+                    updateBeritaAcara(beritaAcaranya, kodeMK, mingguKe);
+                //}else {
+                    //Toast.makeText(getApplicationContext(),"Cek inputan atau Server Tidak Meresponse", Toast.LENGTH_LONG).show();
+                //}
+            }
+        });
     }
 
     @Override
@@ -754,7 +759,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
 
                     if(!error){
                         String pertemuan       = jObj.getString("pertemuan");
-                        pertemuanKe.setText(pertemuan);
+                        //pertemuanKe.setText(pertemuan);
                     }else {
                         String error_msg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(),
@@ -867,6 +872,94 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
+
+    public void storeDataToServer(final String kdHari, final String tglAbsen, final String jamAwal,final String jamAkhir,final String ruang,
+                                  final String kelas, final String nidn,final String kodeMK,final String sks,final String jmlhadir,
+                                  final String blnthnSem,final String kdProdi,final String mingguKe,final String operator,final String thnSem,
+                                  final String idJadwal,final String tglInput){
+
+        // Tag used to cancel the request
+        String tag_string_req = "req";
+
+        pDialog.setMessage("Wait ...");
+        showDialog();
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                Config_URL.base_URL, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    if (!error) {
+                        String errorrr = jObj.getString("success");
+                        Toast.makeText(getApplicationContext(),
+                                errorrr, Toast.LENGTH_LONG).show();
+                    } else {
+
+                        // Error occurred in registration. Get the error
+                        // message
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getApplicationContext(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+                hideDialog();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting params to register url
+                /*      $kdhari,$tglAbsen,$jamAwal,$jamakhir,$ruang,$kelas,$nidn,$kdmk,$sks,
+                        $jmlhhadir,$blnthnabsen,$kdProdi,$mingguke,$operator,$thnSem,$idjadwal,$tglInput
+
+                        */
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("tag", "inputabsendosen");
+                params.put("kdhari", kdHari);
+                params.put("tglAbsen", tglAbsen);
+                params.put("jamAwal", jamAwal);
+                params.put("jamakhir", jamAkhir);
+                params.put("ruang", ruang);
+                params.put("kelas", kelas);
+                params.put("nidn", nidn);
+                params.put("kdmk", kodeMK);
+                params.put("sks", sks);
+                params.put("jmlhadir", jmlhadir);
+                params.put("blnthnabsen", blnthnSem);
+                params.put("kdProdi", kdProdi);
+                params.put("mingguKe", mingguKe);
+                params.put("operator", operator);
+                params.put("thnSem", thnSem);
+                params.put("idJadwal", idJadwal);
+                params.put("tglInput", tglInput);
+                return params;
+            }
+
+        };
+
+        strReq.setRetryPolicy(policy);
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
 
 }
 
