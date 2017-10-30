@@ -62,7 +62,10 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
     private EditText txtTglInput;
     private EditText txtBlnThnAbse;
     private EditText txtBeritaAcara;
+    private TextView txtAbsenMahasiswa;
     private Button btnKirim;
+
+    String Program;
 
     //private Spinner spnBlnTahunAbsen;
 
@@ -133,10 +136,13 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
         txtTglAbsen         = (EditText) findViewById(R.id.edTglAbsen);
         txtTglInput         = (EditText) findViewById(R.id.edTglInput);
         txtBlnTahunAbsen    = (EditText) findViewById(R.id.blnTahunAbsen);
+        txtAbsenMahasiswa   = (TextView) findViewById(R.id.txtMhsAbsen);
+
 
         txtBeritaAcara      = (EditText) findViewById(R.id.beritaAcara);
         btnKirim            = (Button) findViewById(R.id.btnSubmitBerita);
         btnKirim.setEnabled(false);
+
 
         //spnBlnTahunAbsen    = (Spinner) findViewById(R.id.spnBlnThnAbsen);
 
@@ -270,6 +276,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                         String thnSem           = jObj.getString("ThnSem");
                         String kodeProdi        = jObj.getString("KodeProdi");
                         String idJadwal         = jObj.getString("IdJadwal");
+                        Program                 = jObj.getString("KodeProgram");
 
                         txtKodeHari.setText(kodeHari);
                         txtJamAwal.setText(jamAwal);
@@ -281,7 +288,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                         txtKodeProdi.setText(kodeProdi);
                         txtIdJadwal.setText(idJadwal);
                         getSKS(KodeMk);
-                        getMingguKe(KodeMk);
+                        getMingguKe(KodeMk,Ruang,kelasnya);
                         Toast.makeText(getApplicationContext(),
                                 "Sukses mengambil data silahkan tekan tombol mulai", Toast.LENGTH_LONG).show();
                     }else {
@@ -348,10 +355,17 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
 
                     if(!error){
                         String sks            = jObj.getString("SKS");
-                        double jmlhHadir      = Double.parseDouble(sks)/2;
+
+                        double cekSks      = Double.parseDouble(sks);
+
+                        if(cekSks == 0){
+                            txtJumlahHadir.setText("1");
+                        }else {
+                            double jumlahHadir = cekSks/2;
+                            txtJumlahHadir.setText(String.valueOf(jumlahHadir));
+                        }
 
                         txtSks.setText(sks);
-                        txtJumlahHadir.setText(String.valueOf(jmlhHadir));
                     }else {
                         String error_msg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(),
@@ -393,7 +407,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
     /*
     Function get pertemuan
      */
-    public void getMingguKe(final String kodemk){
+    public void getMingguKe(final String kodemk, final String ruang, final String kelas){
         //Tag used to cancel the request
         String tag_string_req = "req";
 
@@ -444,6 +458,8 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("tag","getMingguke");
                 params.put("kode", kodemk);
+                params.put("ruang", ruang);
+                params.put("kelas", kelas);
                 return params;
             }
         };
@@ -561,7 +577,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                         !kelas.isEmpty() && !nidn.isEmpty() && !kodeMK.isEmpty() && !sks.isEmpty() && !jumlahHadir.isEmpty() && !blnTahunSem.isEmpty()
                         && !kdProdi.isEmpty() && !mingguKe.isEmpty() && !operator.isEmpty() && !thnsem.isEmpty() && !idJadwal.isEmpty() && !tglInput.isEmpty()){
                     storeDataToServer(kodeHari,tglAbsen,jamAwal,jamAkhir,ruang,kelas,nidn,kodeMK,sks,
-                            jumlahHadir,blnTahunSem,kdProdi,mingguKe,operator,thnsem,idJadwal,tglInput);
+                            jumlahHadir,blnTahunSem,kdProdi,mingguKe,Program,operator,thnsem,idJadwal,tglInput);
                     getKode(kodeMK);
                     btnScan.setEnabled(true);
                     btnKirim.setEnabled(true);
@@ -603,6 +619,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                 //}
             }
         });
+
     }
 
     @Override
@@ -649,7 +666,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
             if (result.getContents() == null){
                 Toast.makeText(this, "Hasil tidak ditemukan", Toast.LENGTH_SHORT).show();
             }else{
-                String textt = result.getContents().replace("http://elearning.ubl.ac.id/profileubl/?npm=","");
+                String textt = result.getContents().replace("http://ublapps.ubl.ac.id/profileubl/?npm=","");
                 npm.setText(textt);
                 idabsenn = idAbsen.getText().toString();
                 pertemuann = pertemuanKe.getText().toString();
@@ -828,17 +845,23 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
                     }else {
-                        if (!error) {
-                            String errorrr = jObj.getString("success");
-                            Toast.makeText(getApplicationContext(),
-                                    errorrr, Toast.LENGTH_LONG).show();
-                        } else {
-
-                            // Error occurred in registration. Get the error
-                            // message
-                            String errorMsg = jObj.getString("error_msg");
+                        if(error){
+                            String errorMsg = jObj.getString("pesan_error");
                             Toast.makeText(getApplicationContext(),
                                     errorMsg, Toast.LENGTH_LONG).show();
+                        }else {
+                            if (!error) {
+                                viewMhsAbsen(npmm);
+                                String errorrr = jObj.getString("success");
+                                Toast.makeText(getApplicationContext(),
+                                        errorrr, Toast.LENGTH_LONG).show();
+                            } else {
+                                // Error occurred in registration. Get the error
+                                // message
+                                String errorMsg = jObj.getString("error_msg");
+                                Toast.makeText(getApplicationContext(),
+                                        errorMsg, Toast.LENGTH_LONG).show();
+                            }
                         }
                     }
 
@@ -881,7 +904,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
 
     public void storeDataToServer(final String kdHari, final String tglAbsen, final String jamAwal,final String jamAkhir,final String ruang,
                                   final String kelas, final String nidn,final String kodeMK,final String sks,final String jmlhadir,
-                                  final String blnthnSem,final String kdProdi,final String mingguKe,final String operator,final String thnSem,
+                                  final String blnthnSem,final String kdProdi,final String mingguKe,final String program,final String operator,final String thnSem,
                                   final String idJadwal,final String tglInput){
 
         // Tag used to cancel the request
@@ -906,6 +929,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                         String errorrr = jObj.getString("success");
                         Toast.makeText(getApplicationContext(),
                                 errorrr, Toast.LENGTH_LONG).show();
+                        btnSubmit.setEnabled(false);
                     } else {
 
                         // Error occurred in registration. Get the error
@@ -952,6 +976,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                 params.put("blnthnabsen", blnthnSem);
                 params.put("kdProdi", kdProdi);
                 params.put("mingguKe", mingguKe);
+                params.put("program", program);
                 params.put("operator", operator);
                 params.put("thnSem", thnSem);
                 params.put("idJadwal", idJadwal);
@@ -964,6 +989,73 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
         strReq.setRetryPolicy(policy);
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
+
+    /*
+    Function get pertemuan
+     */
+    public void viewMhsAbsen(final String npm){
+        //Tag used to cancel the request
+        String tag_string_req = "req";
+
+        pDialog.setMessage("Loading.....");
+        showDialog();
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                Config_URL.base_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d(String.valueOf(getApplication()), "Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    if(!error){
+                        String npm       = jObj.getString("Npm");
+                        String nama       = jObj.getString("Nama");
+                        int no          = jObj.getInt("No")+1;
+
+                        txtAbsenMahasiswa.append("- Npm   : " + npm +"\n" +"- Nama : "+nama +"\n\n");
+                        //pertemuanKe.setText(pertemuan);
+                    }else {
+                        String error_msg = jObj.getString("error_msg");
+                        Toast.makeText(getApplicationContext(),
+                                error_msg, Toast.LENGTH_LONG).show();
+                    }
+
+                }catch (JSONException e){
+                    //JSON error
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener(){
+
+            @Override
+            public void onErrorResponse(VolleyError error){
+                Log.e(String.valueOf(getApplication()), "Login Error : " + error.getMessage());
+                error.printStackTrace();
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Please Check Your Network Connection", Toast.LENGTH_LONG).show();
+                hideDialog();
+            }
+        }){
+
+            @Override
+            protected Map<String, String> getParams(){
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("tag","npmMhs");
+                params.put("npm", npm);
+                return params;
+            }
+        };
+
+        strReq.setRetryPolicy(policy);
+        AppController.getInstance().addToRequestQueue(strReq,tag_string_req);
+
     }
 
 

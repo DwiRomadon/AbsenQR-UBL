@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">#1ABC9C</color>
     <color name="colorAccent">#16A085</color>
 
+
+    <color name="list_divider">#d9d9d9</color>
+
     <!-- Screens background color-->
     <color name="bg_screen1">#f64c73</color>
     <color name="bg_screen2">#20d2bb</color>

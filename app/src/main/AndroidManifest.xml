@@ -71,7 +71,10 @@
         </activity>
         <activity android:name=".TentangActivity" />
         <activity android:name=".Testing" />
-        <activity android:name=".Absen"></activity>
+        <activity
+            android:name=".Absen"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ListMahasiwaAbsen"></activity>
     </application>
 
 </manifest>

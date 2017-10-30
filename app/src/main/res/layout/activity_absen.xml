@@ -468,21 +468,20 @@ tools:context="com.project.absenubl.Absen">
 
         <EditText
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:inputType="textMultiLine"
                 android:ems="10"
                 android:id="@+id/beritaAcara"
                 android:layout_weight="0.10"
                 android:background="@drawable/rounded_text"
                 android:textSize="14dp"
-                android:hint="Type your remarks here.."
+                android:hint="Ketik Disini..."
                 android:gravity="top"
                 android:paddingLeft="10dp"
                 android:textColor="@color/colorPrimary"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:maxLength="128"
                 android:layout_alignParentBottom="true"/>
         <Button
             android:layout_width="match_parent"
@@ -492,6 +491,29 @@ tools:context="com.project.absenubl.Absen">
             android:layout_marginTop="10dp"
             android:id="@+id/btnSubmitBerita"
             android:textColor="#fff"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="match_parent"
+            android:text="List Data Mahasiswa Absen"
+            android:textColor="@color/colorPrimaryDark" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:layout_gravity="left"
+            android:background="@drawable/rounded_text">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtMhsAbsen"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
