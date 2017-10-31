@@ -15,8 +15,8 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera" />
 
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name="server.AppController"
@@ -74,7 +74,8 @@
         <activity
             android:name=".Absen"
             android:screenOrientation="portrait" />
-        <activity android:name=".ListMahasiwaAbsen"></activity>
+        <activity android:name=".ListMahasiwaAbsen" />
+        <activity android:name="com.newversion.NewAbsen"></activity>
     </application>
 
 </manifest>
