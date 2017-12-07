@@ -625,8 +625,9 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(Html.fromHtml("<font color='#20d2bb'><b>Peringatan !</b></font>"));
-        builder.setMessage(Html.fromHtml("<font color='#20d2bb'><b>Apakah anda sudah yakin telah mengabsen seluruh mahasiswa yang hadir ?...</b></font>"))
+        int color = R.color.colorPrimary;
+        builder.setTitle(Html.fromHtml("<font color='#2980B9'><b>Peringatan !</b></font>"));
+        builder.setMessage(Html.fromHtml("<font color='#2980B9'><b>Apakah anda sudah yakin telah mengabsen seluruh mahasiswa yang hadir ?...</b></font>"))
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -675,6 +676,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                 kelass = kelas.getText().toString();
                 String tglAbsen = txtTglAbsen.getText().toString();
                 String tglInput = txtTglInput.getText().toString();
+
                 if (!kodeMK.isEmpty() && !pertemuann.isEmpty()) {
                     storeDataToServer(idabsenn,tglAbsen,pertemuann,npmm, kodeMK, kelass,tglInput);
                 } else {
@@ -845,11 +847,11 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
                     }else {
-                        if(error){
-                            String errorMsg = jObj.getString("pesan_error");
-                            Toast.makeText(getApplicationContext(),
-                                    errorMsg, Toast.LENGTH_LONG).show();
-                        }else {
+                        //if(error){
+                        //    String errorMsg = jObj.getString("pesan_error");
+                        //    Toast.makeText(getApplicationContext(),
+                        //            errorMsg, Toast.LENGTH_LONG).show();
+                        //}else {
                             if (!error) {
                                 viewMhsAbsen(npmm);
                                 String errorrr = jObj.getString("success");
@@ -863,7 +865,7 @@ public class Absen extends AppCompatActivity implements View.OnClickListener{
                                         errorMsg, Toast.LENGTH_LONG).show();
                             }
                         }
-                    }
+                    //}
 
                 } catch (JSONException e) {
                     e.printStackTrace();

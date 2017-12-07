@@ -13,7 +13,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,7 +71,6 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="208dp"
                     android:layout_height="match_parent">
-
                     <EditText
                         android:id="@+id/edJamAkhir"
                         android:layout_width="208dp"
@@ -139,11 +137,11 @@
 
                     <EditText
                         android:id="@+id/edNidn"
-                        android:visibility="gone"
                         android:layout_width="208dp"
                         android:textColor="@color/colorPrimary"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
+                        android:visibility="gone"
                         android:inputType="numberDecimal"
                         android:hint="NIDN"/>
                 </android.support.design.widget.TextInputLayout>
@@ -159,11 +157,11 @@
                     android:layout_height="match_parent">
                     <EditText
                         android:id="@+id/edKdMK"
-                        android:visibility="gone"
                         android:layout_width="208dp"
                         android:textColor="@color/colorPrimary"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
+                        android:visibility="gone"
                         android:inputType="numberDecimal"
                         android:hint="Kode Matakuliah"/>
                 </android.support.design.widget.TextInputLayout>
@@ -186,6 +184,26 @@
                         android:visibility="gone"
                         android:inputType="numberDecimal"
                         android:hint="SKS"/>
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="-15dp">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="208dp"
+                    android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/edProgram"
+                        android:layout_width="208dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:inputType="numberDecimal"
+                        android:hint="Program"/>
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
@@ -281,14 +299,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="-15dp">
+                android:orientation="horizontal">
                 <android.support.design.widget.TextInputLayout
-                    android:layout_width="208dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <EditText
                         android:id="@+id/edMingguKe"
-                        android:layout_width="208dp"
+                        android:layout_width="match_parent"
                         android:textColor="@color/colorPrimary"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
@@ -408,8 +425,8 @@
                     android:layout_width="match_parent"
                     android:textColor="@color/bg_screen2"
                     android:inputType="textAutoComplete"
-                    android:visibility="gone"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:hint="Id Absen"/>
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
@@ -419,33 +436,48 @@
                     android:id="@+id/txtKelas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
                     android:textColor="@color/bg_screen2"
+                    android:visibility="gone"
                     android:hint="Kelas"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-45dp">
+                <EditText
+                    android:id="@+id/edPertemuan"
+                    android:layout_width="match_parent"
+                    android:inputType="textAutoComplete"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:editable="false"
+                    android:focusableInTouchMode="false"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:hint="Minggu Ke" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <EditText
-                    android:id="@+id/txtPertemuan"
+                    android:id="@+id/edMatakuliah"
                     android:layout_width="match_parent"
                     android:inputType="textAutoComplete"
                     android:layout_height="wrap_content"
                     android:focusable="false"
+                    android:editable="false"
                     android:focusableInTouchMode="false"
-                    android:textColor="@color/bg_screen2"
-                    android:hint="Pertemuan Ke" />
+                    android:textColor="@color/colorPrimaryDark"
+                    android:hint="Matakuliah" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
                 <EditText
                     android:id="@+id/txtNPM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="NPM"
-                    android:textColor="@color/bg_screen2"
+                    android:textColor="@color/colorPrimaryDark"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:editable="false"/>
@@ -458,12 +490,12 @@
                 android:layout_marginTop="45dp"
                 android:id="@+id/btnScan"
                 android:background="@drawable/btn_rounded"/>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_marginTop="15dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Berita Acara Absen Ngajar"
+                android:focusableInTouchMode="false"
                 android:textColor="@color/colorPrimaryDark"
                 android:id="@+id/textView2" />
 
@@ -475,7 +507,7 @@
                 android:id="@+id/beritaAcara"
                 android:layout_weight="0.10"
                 android:background="@drawable/rounded_text"
-                android:textSize="14dp"
+                android:textSize="18dp"
                 android:hint="Ketik Disini..."
                 android:gravity="top"
                 android:paddingLeft="10dp"
@@ -486,7 +518,7 @@
                 android:layout_alignParentBottom="true"/>
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/btn_rounded"
                 android:text="Kirim"
                 android:layout_marginTop="10dp"
@@ -497,23 +529,24 @@
                 android:layout_width="match_parent"
                 android:layout_marginTop="15dp"
                 android:layout_height="match_parent"
-                android:text="List Data Mahasiswa Absen"
+                android:text="List Data Mahasiswa"
                 android:textColor="@color/colorPrimaryDark" />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="2500dp"
                 android:layout_marginTop="5dp"
                 android:orientation="vertical"
-                android:layout_gravity="left"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:id="@+id/linearListView"
                 android:background="@drawable/rounded_text">
-                <TextView
+                <ListView
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/list_news"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtMhsAbsen"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:layout_marginBottom="10dp"/>
+                    android:divider="@null" />
             </LinearLayout>
         </LinearLayout>
 

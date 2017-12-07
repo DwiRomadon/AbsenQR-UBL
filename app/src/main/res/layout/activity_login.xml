@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/backgroundblur"
+    android:orientation="vertical"
+    android:background="#3498DB"
     tools:context="com.project.absenubl.LoginActivity">
 
     <LinearLayout
@@ -18,11 +19,17 @@
         android:orientation="vertical"
         android:id="@+id/linearLayout"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp">
         <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/absenqr"/>
+        <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/login"/>
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFF"/>
     </LinearLayout>
 
     <LinearLayout
@@ -31,7 +38,9 @@
         android:layout_gravity="center"
         android:orientation="vertical"
         android:paddingLeft="20dp"
+        android:background="@drawable/btn_rounded_white"
         android:paddingRight="20dp"
+        android:layout_marginTop="45dp"
         android:id="@+id/linearLayout3"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -39,15 +48,18 @@
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp">
             <EditText
                 android:id="@+id/nidn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nidn"
                 android:inputType="textAutoComplete"
-                android:textColor="@color/bg_screen2"
-                android:drawableLeft="@drawable/userimg"
+                android:textColor="#3498DB"
+                app:backgroundTint="#3498DB"
+                android:drawableTint="#3498DB"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
                 tools:ignore="HardcodedText,RtlHardcoded" />
         </android.support.design.widget.TextInputLayout>
 
@@ -60,35 +72,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                android:textColor="@color/bg_screen2"
+                app:backgroundTint="#3498DB"
+                android:textColor="#3498DB"
                 android:inputType="textPassword"
-                android:drawableLeft="@drawable/passlogin"
+                android:drawableTint="#3498DB"
+                android:drawableLeft="@drawable/ic_password"
                 tools:ignore="HardcodedText,RtlHardcoded" />
         </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_below="@+id/linearLayout3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:background="@drawable/btn_rounded"
+            android:textColor="#3498DB"
+            android:background="@drawable/btn_rounded_white"
             android:layout_below="@+id/linearLayout3"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"
             android:id="@+id/buttonLogin"
             tools:ignore="HardcodedText,ObsoleteLayoutParam" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/univ"
+                    android:layout_marginTop="15dp"/>
         </LinearLayout>
-
-
-</RelativeLayout>
+</LinearLayout>

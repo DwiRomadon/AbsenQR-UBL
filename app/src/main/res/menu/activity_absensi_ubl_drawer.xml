@@ -7,6 +7,10 @@
             android:id="@+id/nav_mahasiswa"
             android:icon="@drawable/mhs"
             android:title="Absen Mahasiswa" />
+        <item
+            android:id="@+id/nav_open_door"
+            android:icon="@drawable/ic_open_door"
+            android:title="Buka Pintu" />
     </group>
 
     <item android:title="App">

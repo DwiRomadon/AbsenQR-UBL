@@ -75,7 +75,13 @@
             android:name=".Absen"
             android:screenOrientation="portrait" />
         <activity android:name=".ListMahasiwaAbsen" />
-        <activity android:name="com.newversion.NewAbsen"></activity>
+        <activity
+            android:name="com.newversion.NewAbsen"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.newversion.AksenAja" />
+        <activity android:name="com.newversion.BeritaAcaraDosen" />
+        <activity android:name=".SmartClass" />
+        <activity android:name="com.newversion.PilihMatakuliah"></activity>
     </application>
 
 </manifest>

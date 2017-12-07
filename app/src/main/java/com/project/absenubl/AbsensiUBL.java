@@ -23,6 +23,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.newversion.AksenAja;
+import com.newversion.NewAbsen;
+import com.newversion.PilihMatakuliah;
 
 import session.SessionManager;
 
@@ -101,13 +104,17 @@ public class AbsensiUBL extends AppCompatActivity
 
         if (id == R.id.nav_mahasiswa) {
             // Handle the camera action
-            Intent a = new Intent(getApplicationContext(), Absen.class);
+            Intent a = new Intent(getApplicationContext(), PilihMatakuliah.class);
             a.putExtra("nidn",nidn);
             startActivity(a);
             finish();
-        } /*else if (id == R.id.nav_dosen) {
-            //showDialog();
-        } */else if(id == R.id.nav_tentang){
+        }else if (id == R.id.nav_open_door) {
+            // Handle the camera action
+            Intent a = new Intent(getApplicationContext(), SmartClass.class);
+            a.putExtra("nidn",nidn);
+            startActivity(a);
+            finish();
+        }else if(id == R.id.nav_tentang){
             Intent a = new Intent(getApplicationContext(), TentangActivity.class);
             startActivity(a);
             finish();

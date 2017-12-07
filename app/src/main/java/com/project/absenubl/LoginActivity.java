@@ -4,12 +4,14 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +54,9 @@ public class LoginActivity extends AppCompatActivity {
             DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
             DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
 
+    LinearLayout linearLayout;
+    Snackbar snackbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
         txtPassword = (EditText) findViewById(R.id.password);
 
         loginBtn    = (Button) findViewById(R.id.buttonLogin);
+
+        linearLayout = (LinearLayout) findViewById(R.id.activity_login);
 
         prefs = getSharedPreferences("UserDetails",
                 Context.MODE_PRIVATE);
@@ -94,10 +101,10 @@ public class LoginActivity extends AppCompatActivity {
                 if(username.trim().length() > 0 && password.trim().length() > 0){
                     checkLogin(username, password);
                 }else{
-                    //Prompt user to enter credential
-                    Toast.makeText(getApplicationContext(),
-                            "Masukan Username atau Password Anda !!",
-                            Toast.LENGTH_LONG).show();
+                    snackbar = Snackbar
+                            .make(linearLayout, "Nidn dan Password tidak boleh kosong. " +
+                                    "Silahkan Masukan Nidn atau Password Anda !!", Snackbar.LENGTH_LONG);
+                    snackbar.show();
                 }
             }
         });
@@ -144,14 +151,17 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         }else{
-                            Toast.makeText(getApplicationContext(),
-                                    "Maaf Aplikasi Ini Hanya Untuk Dosen !!!", Toast.LENGTH_LONG).show();
+                            snackbar = Snackbar
+                                    .make(linearLayout, "Maaf Aplikasi Ini Hanya Untuk Dosen !!!", Snackbar.LENGTH_LONG);
+                            snackbar.show();
                         }
 
                     }else {
                         String error_msg = jObj.getString("error_msg");
-                        Toast.makeText(getApplicationContext(),
-                                error_msg, Toast.LENGTH_LONG).show();
+                        snackbar = Snackbar
+                                .make(linearLayout, error_msg, Snackbar.LENGTH_LONG);
+                        snackbar.show();
+
                     }
 
                 }catch (JSONException e){

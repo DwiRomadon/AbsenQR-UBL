@@ -5,9 +5,9 @@ package server;
 public class Config_URL
 {
 	//Base URL
-	//public static String base_URL = "http://192.168.100.104:10/Api_Siater/";
-	//public static String base_URL = "http://192.168.43.244:10/Api_Siater/";
-	public static String base_URL = "http://ublapps.ubl.ac.id/Api_Siater/";
+	public static String base_URL = "http://172.16.1.33:10/Api_Siater/v2/";
+	//public static String base_URL = "http://172.16.2.174:10/Api_Siater/v2/";
+	//public static String base_URL = "http://ublapps.ubl.ac.id/Api_Siater/v2/";
 	//Default configuration for WAMP - 80 is default port for WAMP and 10.0.2.2 is localhost IP in Android Emulator
 	// Server user login url
 	public static String URL = base_URL+"Api_Siater/";
