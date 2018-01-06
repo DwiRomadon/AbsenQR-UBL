@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="12972009-6dce-490d-ac1e-83eaf792338f" name="Default" comment="" />
+    <ignored path="v2.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="v2" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DB_Functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/DB_Functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4199">
+              <caret line="250" column="37" selection-start-line="250" selection-start-column="37" selection-end-line="250" selection-end-column="37" />
+              <folding>
+                <marker date="1511419909735" expanded="true" signature="580:657" ph="SELECT * FRO... groupuser" />
+                <marker date="1511419909735" expanded="true" signature="1261:1461" ph="INSERT INTO absenmhs20171... " />
+                <marker date="1511419909735" expanded="true" signature="1559:1598" ph="SELECT * FRO... absenmhs20171" />
+                <marker date="1511419909735" expanded="true" signature="1859:1964" ph="UPDATE absen... " />
+                <marker date="1511419909735" expanded="true" signature="2061:2103" ph="SELECT * FRO... absenngajar20171" />
+                <marker date="1511419909735" expanded="true" signature="2332:2383" ph="SELECT * FRO... absenngajar20171" />
+                <marker date="1511419909735" expanded="true" signature="2879:2961" ph="SELECT max(r... absenmhs20171" />
+                <marker date="1511419909735" expanded="true" signature="3242:3305" ph="SELECT DISTI... absenngajar20171" />
+                <marker date="1511419909735" expanded="true" signature="3620:3768" ph="SELECT DISTI... absenngajar20171" />
+                <marker date="1511419909735" expanded="true" signature="4089:4217" ph="SELECT * FRO... jadwaldossplit20171" />
+                <marker date="1511419909735" expanded="true" signature="4646:4692" ph="SELECT * fro... matakuliah" />
+                <marker date="1511419909735" expanded="true" signature="5132:5280" ph="SELECT max(`... absenngajar20171" />
+                <marker date="1511419909735" expanded="true" signature="5770:6209" ph="INSERT INTO `absenngajar20171`... " />
+                <marker date="1511419909735" expanded="true" signature="6306:6348" ph="SELECT * FRO... absenngajar20171" />
+                <marker date="1511419909735" expanded="true" signature="6725:6847" ph="SELECT * FRO... absenngajar20171" />
+                <marker date="1511419909735" expanded="true" signature="7215:7311" ph="SELECT npm F... absenmhs20171" />
+                <marker date="1511419909735" expanded="true" signature="7686:7836" ph="SELECT `nimh... trnlm20171" />
+                <marker date="1511419909735" expanded="true" signature="8200:8348" ph="SELECT `nimh... msmhs" />
+                <marker date="1511419909735" expanded="true" signature="8703:8766" ph="SELECT nimhs... msmhs" />
+                <marker date="1511419909735" expanded="true" signature="9068:9154" ph="SELECT * FRO... setabsenngajar" />
+                <marker date="1511419909735" expanded="true" signature="9459:9539" ph="SELECT * FRO... absenngajar20171" />
+                <marker date="1511419909735" expanded="true" signature="9538:9539" ph="SELECT * FRO... setabsenngajar" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/include/Config.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/include/DB_Functions.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v2" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v2" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.23874755" />
+    <property name="nodejs_interpreter_path" value="E:/Node JS/node" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="E:/xampp2/htdocs/API_POSID" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="12972009-6dce-490d-ac1e-83eaf792338f" name="Default" comment="" />
+      <created>1509521000108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1509521000108</updated>
+      <workItem from="1509521002315" duration="783000" />
+      <workItem from="1509674501861" duration="1058000" />
+      <workItem from="1510203200223" duration="1308000" />
+      <workItem from="1510208383123" duration="1019000" />
+      <workItem from="1510921656719" duration="1347000" />
+      <workItem from="1511321125136" duration="2994000" />
+      <workItem from="1511412624552" duration="2952000" />
+      <workItem from="1511494494055" duration="70000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="11531000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19838946" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DB_Functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4250">
+          <caret line="250" column="37" selection-start-line="250" selection-start-column="37" selection-end-line="250" selection-end-column="37" />
+          <folding>
+            <marker date="1511419909735" expanded="true" signature="580:657" ph="SELECT * FRO... groupuser" />
+            <marker date="1511419909735" expanded="true" signature="1261:1461" ph="INSERT INTO absenmhs20171... " />
+            <marker date="1511419909735" expanded="true" signature="1559:1598" ph="SELECT * FRO... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="1859:1964" ph="UPDATE absen... " />
+            <marker date="1511419909735" expanded="true" signature="2061:2103" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2332:2383" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2879:2961" ph="SELECT max(r... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="3242:3305" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="3620:3768" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="4089:4217" ph="SELECT * FRO... jadwaldossplit20171" />
+            <marker date="1511419909735" expanded="true" signature="4646:4692" ph="SELECT * fro... matakuliah" />
+            <marker date="1511419909735" expanded="true" signature="5132:5280" ph="SELECT max(`... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="5770:6209" ph="INSERT INTO `absenngajar20171`... " />
+            <marker date="1511419909735" expanded="true" signature="6306:6348" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="6725:6847" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="7215:7311" ph="SELECT npm F... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="7686:7836" ph="SELECT `nimh... trnlm20171" />
+            <marker date="1511419909735" expanded="true" signature="8200:8348" ph="SELECT `nimh... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="8703:8766" ph="SELECT nimhs... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="9068:9154" ph="SELECT * FRO... setabsenngajar" />
+            <marker date="1511419909735" expanded="true" signature="9459:9539" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="9538:9539" ph="SELECT * FRO... setabsenngajar" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DB_Functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3978">
+          <caret line="234" column="25" selection-start-line="234" selection-start-column="25" selection-end-line="234" selection-end-column="25" />
+          <folding>
+            <marker date="1511419909735" expanded="true" signature="580:657" ph="SELECT * FRO... groupuser" />
+            <marker date="1511419909735" expanded="true" signature="1261:1461" ph="INSERT INTO absenmhs20171... " />
+            <marker date="1511419909735" expanded="true" signature="1559:1598" ph="SELECT * FRO... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="1859:1964" ph="UPDATE absen... " />
+            <marker date="1511419909735" expanded="true" signature="2061:2103" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2332:2383" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2879:2961" ph="SELECT max(r... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="3242:3305" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="3620:3768" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="4089:4217" ph="SELECT * FRO... jadwaldossplit20171" />
+            <marker date="1511419909735" expanded="true" signature="4646:4692" ph="SELECT * fro... matakuliah" />
+            <marker date="1511419909735" expanded="true" signature="5132:5280" ph="SELECT max(`... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="5770:6209" ph="INSERT INTO `absenngajar20171`... " />
+            <marker date="1511419909735" expanded="true" signature="6306:6348" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="6725:6847" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="7215:7311" ph="SELECT npm F... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="7686:7836" ph="SELECT `nimh... trnlm20171" />
+            <marker date="1511419909735" expanded="true" signature="8200:8348" ph="SELECT `nimh... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="8703:8766" ph="SELECT nimhs... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="9068:9154" ph="SELECT * FRO... setabsenngajar" />
+            <marker date="1511419909735" expanded="true" signature="9459:9539" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="9538:9539" ph="SELECT * FRO... setabsenngajar" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DB_Functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2533">
+          <caret line="149" column="30" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
+          <folding>
+            <marker date="1511419909735" expanded="true" signature="580:657" ph="SELECT * FRO... groupuser" />
+            <marker date="1511419909735" expanded="true" signature="1261:1461" ph="INSERT INTO absenmhs20171... " />
+            <marker date="1511419909735" expanded="true" signature="1559:1598" ph="SELECT * FRO... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="1859:1964" ph="UPDATE absen... " />
+            <marker date="1511419909735" expanded="true" signature="2061:2103" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2332:2383" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2879:2961" ph="SELECT max(r... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="3242:3305" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="3620:3768" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="4089:4217" ph="SELECT * FRO... jadwaldossplit20171" />
+            <marker date="1511419909735" expanded="true" signature="4646:4692" ph="SELECT * fro... matakuliah" />
+            <marker date="1511419909735" expanded="true" signature="5132:5280" ph="SELECT max(`... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="5770:6209" ph="INSERT INTO `absenngajar20171`... " />
+            <marker date="1511419909735" expanded="true" signature="6306:6348" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="6725:6847" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="7215:7311" ph="SELECT npm F... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="7686:7836" ph="SELECT `nimh... trnlm20171" />
+            <marker date="1511419909735" expanded="true" signature="8200:8348" ph="SELECT `nimh... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="8703:8766" ph="SELECT nimhs... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="9068:9154" ph="SELECT * FRO... setabsenngajar" />
+            <marker date="1511419909735" expanded="true" signature="9459:9539" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="9538:9539" ph="SELECT * FRO... setabsenngajar" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2890">
+          <caret line="170" column="35" selection-start-line="170" selection-start-column="22" selection-end-line="170" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DB_Functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1511419909735" expanded="true" signature="580:657" ph="SELECT * FRO... groupuser" />
+            <marker date="1511419909735" expanded="true" signature="1261:1461" ph="INSERT INTO absenmhs20171... " />
+            <marker date="1511419909735" expanded="true" signature="1559:1598" ph="SELECT * FRO... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="1859:1964" ph="UPDATE absen... " />
+            <marker date="1511419909735" expanded="true" signature="2061:2103" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2332:2383" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2879:2961" ph="SELECT max(r... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="3242:3305" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="3620:3768" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="4089:4217" ph="SELECT * FRO... jadwaldossplit20171" />
+            <marker date="1511419909735" expanded="true" signature="4646:4692" ph="SELECT * fro... matakuliah" />
+            <marker date="1511419909735" expanded="true" signature="5132:5280" ph="SELECT max(`... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="5770:6209" ph="INSERT INTO `absenngajar20171`... " />
+            <marker date="1511419909735" expanded="true" signature="6306:6348" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="6725:6847" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="7215:7311" ph="SELECT npm F... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="7686:7836" ph="SELECT `nimh... trnlm20171" />
+            <marker date="1511419909735" expanded="true" signature="8200:8348" ph="SELECT `nimh... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="8703:8766" ph="SELECT nimhs... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="9068:9154" ph="SELECT * FRO... setabsenngajar" />
+            <marker date="1511419909735" expanded="true" signature="9459:9539" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="9538:9539" ph="SELECT * FRO... setabsenngajar" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DB_Functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3502">
+          <caret line="206" column="23" selection-start-line="206" selection-start-column="23" selection-end-line="206" selection-end-column="23" />
+          <folding>
+            <marker date="1511419909735" expanded="true" signature="580:657" ph="SELECT * FRO... groupuser" />
+            <marker date="1511419909735" expanded="true" signature="1261:1461" ph="INSERT INTO absenmhs20171... " />
+            <marker date="1511419909735" expanded="true" signature="1559:1598" ph="SELECT * FRO... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="1859:1964" ph="UPDATE absen... " />
+            <marker date="1511419909735" expanded="true" signature="2061:2103" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2332:2383" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2879:2961" ph="SELECT max(r... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="3242:3305" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="3620:3768" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="4089:4217" ph="SELECT * FRO... jadwaldossplit20171" />
+            <marker date="1511419909735" expanded="true" signature="4646:4692" ph="SELECT * fro... matakuliah" />
+            <marker date="1511419909735" expanded="true" signature="5132:5280" ph="SELECT max(`... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="5770:6209" ph="INSERT INTO `absenngajar20171`... " />
+            <marker date="1511419909735" expanded="true" signature="6306:6348" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="6725:6847" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="7215:7311" ph="SELECT npm F... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="7686:7836" ph="SELECT `nimh... trnlm20171" />
+            <marker date="1511419909735" expanded="true" signature="8200:8348" ph="SELECT `nimh... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="8703:8766" ph="SELECT nimhs... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="9068:9154" ph="SELECT * FRO... setabsenngajar" />
+            <marker date="1511419909735" expanded="true" signature="9459:9539" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="9538:9539" ph="SELECT * FRO... setabsenngajar" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DB_Functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4199">
+          <caret line="250" column="37" selection-start-line="250" selection-start-column="37" selection-end-line="250" selection-end-column="37" />
+          <folding>
+            <marker date="1511419909735" expanded="true" signature="580:657" ph="SELECT * FRO... groupuser" />
+            <marker date="1511419909735" expanded="true" signature="1261:1461" ph="INSERT INTO absenmhs20171... " />
+            <marker date="1511419909735" expanded="true" signature="1559:1598" ph="SELECT * FRO... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="1859:1964" ph="UPDATE absen... " />
+            <marker date="1511419909735" expanded="true" signature="2061:2103" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2332:2383" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="2879:2961" ph="SELECT max(r... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="3242:3305" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="3620:3768" ph="SELECT DISTI... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="4089:4217" ph="SELECT * FRO... jadwaldossplit20171" />
+            <marker date="1511419909735" expanded="true" signature="4646:4692" ph="SELECT * fro... matakuliah" />
+            <marker date="1511419909735" expanded="true" signature="5132:5280" ph="SELECT max(`... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="5770:6209" ph="INSERT INTO `absenngajar20171`... " />
+            <marker date="1511419909735" expanded="true" signature="6306:6348" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="6725:6847" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="7215:7311" ph="SELECT npm F... absenmhs20171" />
+            <marker date="1511419909735" expanded="true" signature="7686:7836" ph="SELECT `nimh... trnlm20171" />
+            <marker date="1511419909735" expanded="true" signature="8200:8348" ph="SELECT `nimh... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="8703:8766" ph="SELECT nimhs... msmhs" />
+            <marker date="1511419909735" expanded="true" signature="9068:9154" ph="SELECT * FRO... setabsenngajar" />
+            <marker date="1511419909735" expanded="true" signature="9459:9539" ph="SELECT * FRO... absenngajar20171" />
+            <marker date="1511419909735" expanded="true" signature="9538:9539" ph="SELECT * FRO... setabsenngajar" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

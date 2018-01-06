@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    tools:context="com.newversion.BeritaAcaraDosen">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:text="Berita Acara Absen Ngajar"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/textView2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/beritaAcara"
+        android:layout_weight="0.10"
+        android:background="@drawable/rounded_text"
+        android:textSize="18dp"
+        android:hint="Ketik Disini..."
+        android:gravity="top"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_alignParentBottom="true"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_rounded"
+        android:text="Kirim"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnSubmitBerita"
+        android:textColor="#fff"/>
+
+</LinearLayout>
