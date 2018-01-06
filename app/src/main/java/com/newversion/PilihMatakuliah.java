@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -45,7 +46,7 @@ public class PilihMatakuliah extends AppCompatActivity {
 
     AdapterMatakuliah adapter;
     ListView list;
-    //SwipeRefreshLayout swipe;
+
     ArrayList<DataMatakuliah> newsList = new ArrayList<DataMatakuliah>();
 
     String kodeHari = null;
@@ -54,8 +55,6 @@ public class PilihMatakuliah extends AppCompatActivity {
     Calendar calendar;
     SimpleDateFormat dayFormat;
     SimpleDateFormat df,df1,df2;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -205,9 +204,10 @@ public class PilihMatakuliah extends AppCompatActivity {
             public void onErrorResponse(VolleyError error){
                 Log.e(String.valueOf(getApplication()), "Error : " + error.getMessage());
                 error.printStackTrace();
+                ImageView image = new ImageView(PilihMatakuliah.this);
+                image.setImageResource(R.drawable.ic_check_connection);
                 AlertDialog.Builder builder = new AlertDialog.Builder(PilihMatakuliah.this);
-                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b>Peringatan !</b></font>"));
-                builder.setMessage(Html.fromHtml("<font color='#2980B9'><b>Periksa koneksi anda</b></font>"))
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
                         .setCancelable(false)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -215,7 +215,8 @@ public class PilihMatakuliah extends AppCompatActivity {
                                 startActivity(a);
                                 finish();
                             }
-                        }).show();
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }){

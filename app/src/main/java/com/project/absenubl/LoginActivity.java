@@ -2,15 +2,19 @@ package com.project.absenubl;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.newversion.NewAbsen;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -175,9 +180,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error){
                 Log.e(TAG, "Login Error : " + error.getMessage());
                 error.printStackTrace();
-                Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(), "Please Check Your Network Connection", Toast.LENGTH_LONG).show();
+                ImageView image = new ImageView(LoginActivity.this);
+                image.setImageResource(R.drawable.ic_check_connection);
+                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                            }
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }){

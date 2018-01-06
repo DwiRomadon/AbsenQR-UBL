@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Absenqr</string>
+    <string name="app_name">AbsenQR</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -34,12 +34,8 @@
     </array>
     <string name="title_activity_tentang">Tentang Aplikasi</string>
     <string name="large_text">
-        Apliaksi Absesi Ubl adalah aplikasi untuk melakukan Absen mahasiswa dan Dosen.\n\nUntuk
-        Melakukan absen silahkan klik menu Drawer yang ada disebelah kiri, lalu silahkan
-        pilih fitur Absen Mahasiswa .\n\nAplikasi ini menggunakan teknologi
-        Qr-Code untuk membaca Npm Mahasiswa yang kemudian akan otomatis melakukan absen.
-        Aplikasi ini dikembangkan dengan bahasa
-        pemrogram Java dan Php, dan menggunakan database Mysql.
+        Aplikasi Absesi Ubl adalah aplikasi untuk melakukan Absen mahasiswa dan Dosen. Selain itu aplikasi ini berfungsi untuk membuka pintu pada kelas yang sudah terintegrasi dengan Smart Class System\n\nUntuk
+        Melakukan absen silahkan klik menu Drawer yang ada disebelah kiri, lalu silahkan membaca Npm Mahasiswa dan Ruang Kelas yang sudah terintegrasi dengan Smart Class System yang kemudian akan otomatis melakukan absen dan membuka pintu kelas.
     </string>
 
     <string-array name="blnTahunAbsen">

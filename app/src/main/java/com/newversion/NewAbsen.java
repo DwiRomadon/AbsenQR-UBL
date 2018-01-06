@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -330,9 +331,10 @@ public class NewAbsen extends AppCompatActivity {
             public void onErrorResponse(VolleyError error){
                 Log.e(String.valueOf(getApplication()), "Error : " + error.getMessage());
                 error.printStackTrace();
+                ImageView image = new ImageView(NewAbsen.this);
+                image.setImageResource(R.drawable.ic_check_connection);
                 AlertDialog.Builder builder = new AlertDialog.Builder(NewAbsen.this);
-                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b>OPPS...</b></font>"));
-                builder.setMessage(Html.fromHtml("<font color='#2980B9'><b>Periksa Koneksi Anda</b></font>"))
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
                         .setCancelable(false)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -340,7 +342,8 @@ public class NewAbsen extends AppCompatActivity {
                                 startActivity(a);
                                 finish();
                             }
-                        }).show();
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }){
@@ -414,10 +417,19 @@ public class NewAbsen extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error){
                 Log.e(String.valueOf(getApplication()), "Error : " + error.getMessage());
-                error.printStackTrace();
-                Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(), "Please Check Your Network Connection", Toast.LENGTH_LONG).show();
+                ImageView image = new ImageView(NewAbsen.this);
+                image.setImageResource(R.drawable.ic_check_connection);
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewAbsen.this);
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent a = new Intent(NewAbsen.this, AbsensiUBL.class);
+                                startActivity(a);
+                                finish();
+                            }
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }){
@@ -483,9 +495,19 @@ public class NewAbsen extends AppCompatActivity {
             public void onErrorResponse(VolleyError error){
                 Log.e(String.valueOf(getApplication()), "Error : " + error.getMessage());
                 error.printStackTrace();
-                Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(), "Please Check Your Network Connection", Toast.LENGTH_LONG).show();
+                ImageView image = new ImageView(NewAbsen.this);
+                image.setImageResource(R.drawable.ic_check_connection);
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewAbsen.this);
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent a = new Intent(NewAbsen.this, AbsensiUBL.class);
+                                startActivity(a);
+                                finish();
+                            }
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }){
@@ -551,9 +573,19 @@ public class NewAbsen extends AppCompatActivity {
             public void onErrorResponse(VolleyError error){
                 Log.e(String.valueOf(getApplication()), "Error : " + error.getMessage());
                 error.printStackTrace();
-                Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(), "Please Check Your Network Connection", Toast.LENGTH_LONG).show();
+                ImageView image = new ImageView(NewAbsen.this);
+                image.setImageResource(R.drawable.ic_check_connection);
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewAbsen.this);
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent a = new Intent(NewAbsen.this, AbsensiUBL.class);
+                                startActivity(a);
+                                finish();
+                            }
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }){
@@ -668,8 +700,19 @@ public class NewAbsen extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Error: " + error.getMessage());
-                Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                ImageView image = new ImageView(NewAbsen.this);
+                image.setImageResource(R.drawable.ic_check_connection);
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewAbsen.this);
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent a = new Intent(NewAbsen.this, AbsensiUBL.class);
+                                startActivity(a);
+                                finish();
+                            }
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }) {
@@ -747,8 +790,19 @@ public class NewAbsen extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Error: " + error.getMessage());
-                Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                ImageView image = new ImageView(NewAbsen.this);
+                image.setImageResource(R.drawable.ic_check_connection);
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewAbsen.this);
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent a = new Intent(NewAbsen.this, AbsensiUBL.class);
+                                startActivity(a);
+                                finish();
+                            }
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }) {
@@ -904,8 +958,19 @@ public class NewAbsen extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Error: " + error.getMessage());
-                Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                ImageView image = new ImageView(NewAbsen.this);
+                image.setImageResource(R.drawable.ic_check_connection);
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewAbsen.this);
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent a = new Intent(NewAbsen.this, AbsensiUBL.class);
+                                startActivity(a);
+                                finish();
+                            }
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }) {
@@ -989,9 +1054,19 @@ public class NewAbsen extends AppCompatActivity {
             public void onErrorResponse(VolleyError error){
                 Log.e(String.valueOf(getApplication()), "Error : " + error.getMessage());
                 error.printStackTrace();
-                Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(), "Please Check Your Network Connection", Toast.LENGTH_LONG).show();
+                ImageView image = new ImageView(NewAbsen.this);
+                image.setImageResource(R.drawable.ic_check_connection);
+                AlertDialog.Builder builder = new AlertDialog.Builder(NewAbsen.this);
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent a = new Intent(NewAbsen.this, AbsensiUBL.class);
+                                startActivity(a);
+                                finish();
+                            }
+                        }).setView(image)
+                        .show();
                 hideDialog();
             }
         }){

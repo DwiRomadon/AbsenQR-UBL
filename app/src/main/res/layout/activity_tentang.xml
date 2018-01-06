@@ -44,7 +44,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Versi Beta"
+                android:text="Versi 2.0"
                 android:textSize="18dp"/>
         </LinearLayout>
 
@@ -90,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ubl On Apps"
+                android:text="Crop Studio"
                 android:textStyle="bold"
                 android:textSize="18dp"/>
             <TextView
@@ -109,7 +109,7 @@
             android:layout_marginTop="20dp">
             <View
                 android:layout_width="match_parent"
-                android:background="@color/bg_screen2"
+                android:background="@color/colorPrimary"
                 android:layout_height="2dp"
                 android:id="@+id/view"
                 android:layout_below="@+id/linearLayout5"
@@ -124,7 +124,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/linearLayout6">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -140,10 +141,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/large_text"
-                android:layout_below="@+id/linearLayout4"
+                android:layout_alignBottom="@+id/linearLayout6"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:text="@string/large_text"
                 android:textSize="18dp" />
         </LinearLayout>
 

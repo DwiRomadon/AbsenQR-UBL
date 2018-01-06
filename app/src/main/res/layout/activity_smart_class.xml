@@ -12,4 +12,22 @@
     android:gravity="center"
     tools:context="com.project.absenubl.SmartClass">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="*Jika sudah berhasil membuka pintu silahkan kunci kembali dengan menekan tombol dibawah ini*"
+        android:textColor="@color/dot_dark_screen1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kunci Pintu"
+        android:textStyle="bold"
+        android:id="@+id/btnTutupPintu"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/rounded_text"/>
+
 </LinearLayout>
