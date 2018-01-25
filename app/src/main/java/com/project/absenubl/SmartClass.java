@@ -1,9 +1,15 @@
 package com.project.absenubl;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.icu.util.TimeUnit;
 import android.media.MediaPlayer;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -65,6 +72,16 @@ public class SmartClass extends AppCompatActivity {
 
     private Button btnTutupPintu;
 
+    String ruang,awal,akhir;
+
+    TextView time;
+
+    Dialog myDialog;
+
+    TextView txtclose;
+    String sukses;
+    ImageView gambarPintu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +96,7 @@ public class SmartClass extends AppCompatActivity {
         pDialog.setCancelable(false);
 
         btnTutupPintu = (Button) findViewById(R.id.btnTutupPintu);
+        time          = (TextView) findViewById(R.id.time);
 
         Intent intent = getIntent();
         strNidn = intent.getStringExtra("nidn");
@@ -97,9 +115,16 @@ public class SmartClass extends AppCompatActivity {
         btnTutupPintu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tutupPintu();
+                tutupPintu(strNidn, kodeHari,awal,
+                        akhir,ruang);
             }
         });
+
+        myDialog = new Dialog(this);
+
+        myDialog.setContentView(R.layout.pop_up);
+        gambarPintu   = (ImageView) myDialog.findViewById(R.id.gambar);
+
     }
 
     public void smartClass(final String nidn, final String kdHari, final String jamAwal, final String jamAkhir, final String ruang){
@@ -122,20 +147,11 @@ public class SmartClass extends AppCompatActivity {
 
                     if(!error){
 
-                        String sukses = jObj.getString("success");
-                        ImageView image = new ImageView(SmartClass.this);
-                        image.setImageResource(R.drawable.ic_open_door_sukses);
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SmartClass.this);
-                        builder.setTitle(Html.fromHtml("<font color='#2980B9'><b>Berhasil Membuka Pintu</b></font>"));
-                        builder.setMessage(Html.fromHtml("<font color='#2980B9'><b>"+sukses+"</b></font>"))
-                                .setCancelable(false)
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-                                    }
-                                }).setView(image).show();
-
+                        sukses = jObj.getString("success");
+                        gambarPintu.setImageResource(R.drawable.ic_open_door_sukses);
+                        ShowPopup();
                         play();
+                        time();
 
                     }else {
                         String error_msg = jObj.getString("error_msg");
@@ -175,6 +191,7 @@ public class SmartClass extends AppCompatActivity {
                                 Intent a = new Intent(SmartClass.this, AbsensiUBL.class);
                                 startActivity(a);
                                 finish();
+
                             }
                         }).setView(image).show();
                 hideDialog();
@@ -200,12 +217,12 @@ public class SmartClass extends AppCompatActivity {
     }
 
 
-    public void tutupPintu(){
+    public void tutupPintu(final String nidn, final String kdHari, final String jamAwal, final String jamAkhir, final String ruang){
         //Tag used to cancel the request
         String tag_string_req = "req";
 
-        pDialog.setMessage("Loading.....");
-        showDialog();
+        //pDialog.setMessage("Loading.....");
+       /// showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 Config_URL.base_URL, new Response.Listener<String>() {
@@ -219,21 +236,9 @@ public class SmartClass extends AppCompatActivity {
                     boolean error = jObj.getBoolean("error");
 
                     if(!error){
+
                         tutup();
-                        String sukses = jObj.getString("success");
-                        ImageView image = new ImageView(SmartClass.this);
-                        image.setImageResource(R.drawable.ic_close_door);
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SmartClass.this);
-                        builder.setTitle(Html.fromHtml("<font color='#2980B9'><b>Berhasil Membuka Pintu</b></font>"));
-                        builder.setMessage(Html.fromHtml("<font color='#2980B9'><b>"+sukses+"</b></font>"))
-                                .setCancelable(false)
-                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        Intent a = new Intent(SmartClass.this, AbsensiUBL.class);
-                                        startActivity(a);
-                                        finish();
-                                    }
-                                }).setView(image).show();
+
                     }else {
                         String error_msg = jObj.getString("error_msg");
                         //Toast.makeText(getApplicationContext(),
@@ -274,7 +279,7 @@ public class SmartClass extends AppCompatActivity {
                                 finish();
                             }
                         }).setView(image).show();
-                hideDialog();
+                ///hideDialog();
             }
         }){
 
@@ -282,6 +287,11 @@ public class SmartClass extends AppCompatActivity {
             protected Map<String, String> getParams(){
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("tag","getTutupPintu");
+                params.put("nidn", nidn);
+                params.put("kdhari", kdHari);
+                params.put("awal", jamAwal);
+                params.put("akhir", jamAkhir);
+                params.put("ruang", ruang);
                 return params;
             }
         };
@@ -330,9 +340,9 @@ public class SmartClass extends AppCompatActivity {
                     System.out.println("Sorry your day is wrong");
                 }
 
-                String awal     = String.valueOf(df.format(calendar.getTime()));
-                String akhir    = String.valueOf(df.format(calendar.getTime()));
-                String ruang    = result.getContents();
+                awal     = String.valueOf(df.format(calendar.getTime()));
+                akhir    = String.valueOf(df.format(calendar.getTime()));
+                ruang    = result.getContents();
 
                 //ruang           = txtRuang.getText().toString();
                 //strNidn         = txtNidn.getText().toString();
@@ -340,12 +350,14 @@ public class SmartClass extends AppCompatActivity {
                 if (!ruang.isEmpty()) {
                     smartClass(strNidn, kodeHari,awal,
                             akhir,ruang);
-                } else {
+
+                }else {
                     Toast.makeText(getApplicationContext(),
                             "Please enter your details!", Toast.LENGTH_LONG)
                             .show();
                 }
             }
+
         }else{
             super.onActivityResult(requestCode, resultCode, data);
         }
@@ -425,5 +437,39 @@ public class SmartClass extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
             }
         });
+    }
+
+    public void ShowPopup() {
+        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+        //btnFollow = (Button) myDialog.findViewById(R.id.btnfollow);
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent(SmartClass.this, AbsensiUBL.class);
+                startActivity(a);
+                finish();
+                }
+            });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+    }
+
+    public void time(){
+        final int[] counter = {0};
+        new CountDownTimer(30000, 1000){
+            public void onTick(long millisUntilFinished){
+                txtclose.setEnabled(false);
+                txtclose.setText(String.valueOf(counter[0]));
+                counter[0]++;
+            }
+            public  void onFinish(){
+                txtclose.setEnabled(true);
+                gambarPintu.setImageResource(R.drawable.ic_close_door);
+                txtclose.setText("X");
+                tutupPintu(strNidn, kodeHari,awal,
+                        akhir,ruang);
+            }
+        }.start();
     }
 }

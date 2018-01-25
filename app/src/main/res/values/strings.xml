@@ -45,4 +45,6 @@
         <item>Des2017</item>
         <item>Jan2018</item>
     </string-array>
+
+    <string name="peringatan">Pintu akan kembali tertutup setelah 5 menit. Terimakasih</string>
 </resources>

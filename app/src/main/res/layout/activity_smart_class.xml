@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:paddingBottom="16dp"
     android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingLeft="16dp"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    android:gravity="center"
     tools:context="com.project.absenubl.SmartClass">
 
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:text="*Jika sudah berhasil membuka pintu silahkan kunci kembali dengan menekan tombol dibawah ini*"
-        android:textColor="@color/dot_dark_screen1"/>
-
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginTop="155dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/time"
+            android:textColor="@color/dot_dark_screen1"
+            android:textSize="25dp" />
+    </LinearLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +31,36 @@
         android:textStyle="bold"
         android:id="@+id/btnTutupPintu"
         android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:drawableLeft="@drawable/ic_door_lock"
+        android:drawableTint="@color/colorPrimaryDark"
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/rounded_text"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Powered By:"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="#fff" />
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/univ"
+            android:layout_weight="0.56"
+            android:id="@+id/imageView3" />
+    </LinearLayout>
+
+</RelativeLayout>
