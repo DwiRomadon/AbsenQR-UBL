@@ -79,6 +79,7 @@ public class SmartClass extends AppCompatActivity {
     Dialog myDialog;
 
     TextView txtclose;
+    TextView idWait;
     String sukses;
     ImageView gambarPintu;
 
@@ -97,6 +98,7 @@ public class SmartClass extends AppCompatActivity {
 
         btnTutupPintu = (Button) findViewById(R.id.btnTutupPintu);
         time          = (TextView) findViewById(R.id.time);
+
 
         Intent intent = getIntent();
         strNidn = intent.getStringExtra("nidn");
@@ -123,7 +125,9 @@ public class SmartClass extends AppCompatActivity {
         myDialog = new Dialog(this);
 
         myDialog.setContentView(R.layout.pop_up);
+        idWait        = (TextView) myDialog.findViewById(R.id.idWait);
         gambarPintu   = (ImageView) myDialog.findViewById(R.id.gambar);
+        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
 
     }
 
@@ -151,10 +155,10 @@ public class SmartClass extends AppCompatActivity {
                         gambarPintu.setImageResource(R.drawable.ic_open_door_sukses);
                         ShowPopup();
                         play();
-                        time();
+
 
                     }else {
-                        String error_msg = jObj.getString("error_msg");
+                        String error_msg = jObj.getString("err_msg");
                         //Toast.makeText(getApplicationContext(),
                         //        error_msg + " Atau tutup aplikasi dan masuk kembali", Toast.LENGTH_LONG).show();
                         AlertDialog.Builder builder = new AlertDialog.Builder(SmartClass.this);
@@ -237,7 +241,7 @@ public class SmartClass extends AppCompatActivity {
 
                     if(!error){
 
-                        tutup();
+
 
                     }else {
                         String error_msg = jObj.getString("error_msg");
@@ -406,7 +410,19 @@ public class SmartClass extends AppCompatActivity {
         }
 
         /** Menjalankan Audio */
-        mp.start();
+        final int[] counter = {0};
+        new CountDownTimer(5000, 1000){
+            public void onTick(long millisUntilFinished){
+                idWait.setText("Wait . . .");
+                txtclose.setEnabled(false);
+                counter[0]++;
+            }
+            public  void onFinish(){
+                idWait.setText("");
+                time();
+                mp.start();
+            }
+        }.start();
 
         /** Penanganan Ketika Suara Berakhir */
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -440,9 +456,6 @@ public class SmartClass extends AppCompatActivity {
     }
 
     public void ShowPopup() {
-        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
-        //btnFollow = (Button) myDialog.findViewById(R.id.btnfollow);
-
         txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -465,10 +478,11 @@ public class SmartClass extends AppCompatActivity {
             }
             public  void onFinish(){
                 txtclose.setEnabled(true);
-                gambarPintu.setImageResource(R.drawable.ic_close_door);
                 txtclose.setText("X");
                 tutupPintu(strNidn, kodeHari,awal,
                         akhir,ruang);
+                tutup();
+                gambarPintu.setImageResource(R.drawable.ic_close_door);
             }
         }.start();
     }
