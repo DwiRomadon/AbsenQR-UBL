@@ -33,6 +33,7 @@ import com.project.absenubl.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -78,11 +79,17 @@ public class NewAbsen extends AppCompatActivity {
     private TextView edLisAbsenMhs;
     private EditText edNpm;
     private EditText edBeritaAcara;
+    private TextView prodi;
+    private TextView hari;
+    private TextView mingguKenya;
+    private TextView matkuliahnya;
+    private TextView namaDosen;
 
     private Button btnMulaiAbsen;
     private Button btnScan;
+    private Button lihatMhsAbsen;
 
-    private LinearLayout linearListView;
+    //private LinearLayout linearListView;
 
     private  Button btnKirim ;
 
@@ -103,6 +110,7 @@ public class NewAbsen extends AppCompatActivity {
     String idJadwal     ;
     String tglInput     ;
     String Program      ;
+    String namaMK;
 
     String kodeHari = null;
 
@@ -112,11 +120,12 @@ public class NewAbsen extends AppCompatActivity {
 
     ProgressDialog pDialog;
 
-    Adapter adapter;
-    ListView list;
+    //Adapter adapter;
+    //ListView list;
     //SwipeRefreshLayout swipe;
-    ArrayList<DataMhsAbsen> newsList = new ArrayList<DataMhsAbsen>();
+    //ArrayList<DataMhsAbsen> newsList = new ArrayList<DataMhsAbsen>();
 
+    String kodemk;
     //qr code scanner object
     private IntentIntegrator intentIntegrator;
 
@@ -136,13 +145,13 @@ public class NewAbsen extends AppCompatActivity {
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
 
-        list = (ListView) findViewById(R.id.list_news);
-        newsList.clear();
+        //list = (ListView) findViewById(R.id.list_news);
+        //newsList.clear();
 
-        adapter = new Adapter(NewAbsen.this, newsList);
-        list.setAdapter(adapter);
+        //adapter = new Adapter(NewAbsen.this, newsList);
+        //list.setAdapter(adapter);
 
-        linearListView = (LinearLayout) findViewById(R.id.linearListView);
+        //linearListView = (LinearLayout) findViewById(R.id.linearListView);
 
         edNidn          = (EditText) findViewById(R.id.edNidn);
         edKodeHari      = (EditText) findViewById(R.id.edKdHari);
@@ -168,11 +177,19 @@ public class NewAbsen extends AppCompatActivity {
         edLisAbsenMhs   = (TextView) findViewById(R.id.txtMhsAbsen);
         edNpm           = (EditText) findViewById(R.id.txtNPM);
         edBeritaAcara   = (EditText) findViewById(R.id.beritaAcara);
+
+        prodi           = (TextView) findViewById(R.id.prodi);
+        hari            = (TextView) findViewById(R.id.harinya);
+        mingguKenya     = (TextView) findViewById(R.id.mingguKe);
+        matkuliahnya    = (TextView) findViewById(R.id.matakuliahnya);
+        namaDosen       = (TextView) findViewById(R.id.nmdos);
+
         edBeritaAcara.setEnabled(false);
         //edBeritaAcara.setShowSoftInputOnFocus(false);
         edBeritaAcara.setFocusableInTouchMode(false);
         btnMulaiAbsen   = (Button) findViewById(R.id.btnSubmit);
         btnScan         = (Button) findViewById(R.id.btnScan);
+        lihatMhsAbsen   = (Button) findViewById(R.id.lihatMhsAbsen);
         btnScan.setEnabled(false);
 
         btnKirim            = (Button) findViewById(R.id.btnSubmitBerita);
@@ -180,7 +197,7 @@ public class NewAbsen extends AppCompatActivity {
 
         Intent intent = getIntent();
         strNidn = intent.getStringExtra("nidn");
-        String kodemk = intent.getStringExtra("kodemk");
+        kodemk = intent.getStringExtra("kodemk");
         edNidn.setText(strNidn);
         edOperator.setText(strNidn);
 
@@ -213,7 +230,7 @@ public class NewAbsen extends AppCompatActivity {
         }
 
         getDataFromTblSplitDosen(kodemk, kodeHari,String.valueOf(df.format(calendar.getTime())),
-                String.valueOf(df.format(calendar.getTime())));
+                String.valueOf(df.format(calendar.getTime())),strNidn);
         getBlnThnSemAndMingguKe(String.valueOf(df1.format(calendar.getTime())),
                 String.valueOf(df1.format(calendar.getTime())));
 
@@ -259,7 +276,7 @@ public class NewAbsen extends AppCompatActivity {
     /*
     Function Get Code Dosen
      */
-    public void getDataFromTblSplitDosen(final String nidn, final String kdHari, final String jamAwal, final String jamAkhir){
+    public void getDataFromTblSplitDosen(final String kdmk, final String kdHari, final String jamAwal, final String jamAkhir, final String nidn){
         //Tag used to cancel the request
         String tag_string_req = "req";
 
@@ -288,7 +305,24 @@ public class NewAbsen extends AppCompatActivity {
                         String kodeProdi        = jObj.getString("KodeProdi");
                         String idJadwal         = jObj.getString("IdJadwal");
                         String program          = jObj.getString("KodeProgram");
+                        namaMK           = jObj.getString("Nama_MK");
+                        String sks              = jObj.getString("Sks");
+                        String prodinya         = jObj.getString("Prodi");
+                        String harinya          = jObj.getString("Hari");
+                        String nama             = jObj.getString("Dosen");
+                        String gelar            = jObj.getString("Gelar");
+                        double cekSks      = Double.parseDouble(sks);
 
+                        if(cekSks == 0){
+                            edJumlahHadir.setText("1");
+                        }else {
+                            double jumlahHadir = cekSks/2;
+                            edJumlahHadir.setText(String.valueOf(jumlahHadir));
+                        }
+
+                        edSks.setText(sks);
+                        edMatakuliah.setText(namaMK);
+                        matkuliahnya.setText("\u25CF Matakul: "+namaMK);
                         edKodeHari.setText(kodeHari);
                         edJamAwal.setText(jamAwal);
                         edJamAkhir.setText(jamAkhir);
@@ -299,7 +333,10 @@ public class NewAbsen extends AppCompatActivity {
                         edKodeProdi.setText(kodeProdi);
                         edIdJadwal.setText(idJadwal);
                         edProgram.setText(program);
-                        getSKS(KodeMk);
+                        prodi.setText("\u25CF Prodi\t\t: "+prodinya);
+                        hari.setText("\u25CF Hari\t\t\t: "+harinya);
+                        namaDosen.setText("\u25CF Dosen\t: "+nama+" "+gelar);
+                        //getSKS(KodeMk);
                         //getMingguKe(KodeMk,Ruang,kelasnya);
                         Toast.makeText(getApplicationContext(),
                                 "Sukses mengambil data silahkan tekan tombol mulai", Toast.LENGTH_LONG).show();
@@ -352,10 +389,11 @@ public class NewAbsen extends AppCompatActivity {
             protected Map<String, String> getParams(){
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("tag","getAbsenDosen");
-                params.put("kodemk", nidn);
+                params.put("kodemk", kdmk);
                 params.put("kdhari", kdHari);
                 params.put("awal", jamAwal);
                 params.put("akhir", jamAkhir);
+                params.put("nidn", nidn);
                 return params;
             }
         };
@@ -364,90 +402,6 @@ public class NewAbsen extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(strReq,tag_string_req);
 
     }
-
-    /*
-    Function Get Code SKS DOSEN
-     */
-    public void getSKS(final String kdMk){
-        //Tag used to cancel the request
-        String tag_string_req = "req";
-
-        pDialog.setMessage("Loading.....");
-        showDialog();
-
-        StringRequest strReq = new StringRequest(Request.Method.POST,
-                Config_URL.base_URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.d(String.valueOf(getApplication()), "Response: " + response.toString());
-                hideDialog();
-
-                try {
-                    JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
-
-                    if(!error){
-                        String sks            = jObj.getString("SKS");
-                        String namaMK         = jObj.getString("NamaMK");
-
-                        double cekSks      = Double.parseDouble(sks);
-
-                        if(cekSks == 0){
-                            edJumlahHadir.setText("1");
-                        }else {
-                            double jumlahHadir = cekSks/2;
-                            edJumlahHadir.setText(String.valueOf(jumlahHadir));
-                        }
-
-                        edSks.setText(sks);
-                        edMatakuliah.setText(namaMK);
-                    }else {
-                        String error_msg = jObj.getString("error_msg");
-                        Toast.makeText(getApplicationContext(),
-                                error_msg, Toast.LENGTH_LONG).show();
-                    }
-
-                }catch (JSONException e){
-                    //JSON error
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener(){
-
-            @Override
-            public void onErrorResponse(VolleyError error){
-                Log.e(String.valueOf(getApplication()), "Error : " + error.getMessage());
-                ImageView image = new ImageView(NewAbsen.this);
-                image.setImageResource(R.drawable.ic_check_connection);
-                AlertDialog.Builder builder = new AlertDialog.Builder(NewAbsen.this);
-                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
-                        .setCancelable(false)
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                Intent a = new Intent(NewAbsen.this, AbsensiUBL.class);
-                                startActivity(a);
-                                finish();
-                            }
-                        }).setView(image)
-                        .show();
-                hideDialog();
-            }
-        }){
-
-            @Override
-            protected Map<String, String> getParams(){
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("tag","getSKS");
-                params.put("kodemk", kdMk);
-                return params;
-            }
-        };
-
-        strReq.setRetryPolicy(policy);
-        AppController.getInstance().addToRequestQueue(strReq,tag_string_req);
-
-    }
-
 
     /*
     Function Get Code SKS DOSEN
@@ -476,6 +430,7 @@ public class NewAbsen extends AppCompatActivity {
 
                         edBlnThnAbsen.setText(blnThnAbsen);
                         edMingguKe.setText(mingguKe);
+                        mingguKenya.setText("\u25CF Minggu\t: Ke "+mingguKe);
                         edPertemuan.setText(mingguKe);
 
                     }else {
@@ -528,7 +483,7 @@ public class NewAbsen extends AppCompatActivity {
     }
 
     // Fungsi get JSON Mahasiswa
-    private void getNpmAndNamaMahasiswa(final String kodeMk) {
+    /*private void getNpmAndNamaMahasiswa(final String kodeMk) {
 
         String tag_string_req = "req";
 
@@ -600,7 +555,7 @@ public class NewAbsen extends AppCompatActivity {
         };
 
         AppController.getInstance().addToRequestQueue(strReq, tag_json_obj);
-    }
+    }*/
 
 
     @Override
@@ -864,11 +819,12 @@ public class NewAbsen extends AppCompatActivity {
                     btnScan.setEnabled(true);
                     btnKirim.setEnabled(true);
                     getIdAbsenNgajar(kodeMK,tglAbsen);
-                    getNpmAndNamaMahasiswa(kodeMK);
+                    //getNpmAndNamaMahasiswa(kodeMK);
                     btnMulaiAbsen.setEnabled(false);
                     //edBeritaAcara.setShowSoftInputOnFocus(true);
                     edBeritaAcara.setEnabled(true);
                     edBeritaAcara.setFocusableInTouchMode(true);
+                    btnMulaiAbsen.setVisibility(View.GONE);
 
                 }else {
                     Toast.makeText(getApplicationContext(),
@@ -907,6 +863,18 @@ public class NewAbsen extends AppCompatActivity {
                 //}else {
                 //Toast.makeText(getApplicationContext(),"Cek inputan atau Server Tidak Meresponse", Toast.LENGTH_LONG).show();
                 //}
+            }
+        });
+
+
+        lihatMhsAbsen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent(NewAbsen.this, ListMhsAbsen.class);
+                a.putExtra("kode",kodemk);
+                a.putExtra("tglabsen",String.valueOf(df1.format(calendar.getTime())) );
+                a.putExtra("mk",namaMK);
+                startActivity(a);
             }
         });
 

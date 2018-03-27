@@ -17,17 +17,151 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="25dp"
             android:orientation="vertical"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_text"
+                android:layout_height="130dp"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/nmdos"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/harinya"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/prodi"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/mingguKe"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/matakuliahnya"/>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp">
+                <EditText
+                    android:id="@+id/txtNPM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Npm Mahasiswa"
+                    android:text="-"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:focusable="false"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:focusableInTouchMode="false"
+                    android:editable="false"/>
+            </android.support.design.widget.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="-15dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/btnSubmit"
+                            android:text="Mulai"
+                            android:textColor="#fff"
+                            android:layout_gravity="center"
+                            android:background="@drawable/btn_rounded"
+                            android:layout_weight="0.15" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pindai Kode QR"
+                android:textColor="#fff"
+                android:layout_marginTop="15dp"
+                android:id="@+id/btnScan"
+                android:background="@drawable/btn_rounded"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:text="Berita Acara Absen Ngajar"
+                android:focusableInTouchMode="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/textView2" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/beritaAcara"
+                android:layout_weight="0.10"
+                android:background="@drawable/rounded_text"
+                android:textSize="18dp"
+                android:hint="Ketik Disini..."
+                android:gravity="top"
+                android:paddingLeft="10dp"
+                android:textColor="@color/colorPrimary"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_alignParentBottom="true"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_rounded"
+                android:text="Kirim"
+                android:layout_marginTop="10dp"
+                android:id="@+id/btnSubmitBerita"
+                android:textColor="#fff"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_rounded"
+                android:text="Lihat Mahasiswa Sudah Absen"
+                android:layout_marginTop="10dp"
+                android:id="@+id/lihatMhsAbsen"
+                android:textColor="#fff"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="-15dp">
+                android:layout_marginTop="-8dp">
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="208dp"
                     android:layout_height="match_parent">
@@ -251,33 +385,6 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="-15dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal">
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:id="@+id/btnSubmit"
-                            android:text="Mulai"
-                            android:textColor="#fff"
-                            android:layout_gravity="center"
-                            android:background="@drawable/btn_rounded"
-                            android:layout_weight="0.15" />
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="-15dp">
@@ -451,6 +558,8 @@
                     android:layout_height="wrap_content"
                     android:focusable="false"
                     android:editable="false"
+                    android:visibility="gone"
+                    android:text="Minggu Ke"
                     android:focusableInTouchMode="false"
                     android:textColor="@color/colorPrimaryDark"
                     android:hint="Minggu Ke" />
@@ -464,90 +573,12 @@
                     android:inputType="textAutoComplete"
                     android:layout_height="wrap_content"
                     android:focusable="false"
+                    android:visibility="gone"
                     android:editable="false"
                     android:focusableInTouchMode="false"
                     android:textColor="@color/colorPrimaryDark"
                     android:hint="Matakuliah" />
             </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <EditText
-                    android:id="@+id/txtNPM"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="NPM"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:editable="false"/>
-            </android.support.design.widget.TextInputLayout>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pindai Kode QR"
-                android:textColor="#fff"
-                android:layout_marginTop="45dp"
-                android:id="@+id/btnScan"
-                android:background="@drawable/btn_rounded"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_height="wrap_content"
-                android:text="Berita Acara Absen Ngajar"
-                android:focusableInTouchMode="false"
-                android:textColor="@color/colorPrimaryDark"
-                android:id="@+id/textView2" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/beritaAcara"
-                android:layout_weight="0.10"
-                android:background="@drawable/rounded_text"
-                android:textSize="18dp"
-                android:hint="Ketik Disini..."
-                android:gravity="top"
-                android:paddingLeft="10dp"
-                android:textColor="@color/colorPrimary"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:layout_alignParentBottom="true"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_rounded"
-                android:text="Kirim"
-                android:layout_marginTop="10dp"
-                android:id="@+id/btnSubmitBerita"
-                android:textColor="#fff"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_height="match_parent"
-                android:text="List Data Mahasiswa"
-                android:textColor="@color/colorPrimaryDark" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="2500dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:id="@+id/linearListView"
-                android:background="@drawable/rounded_text">
-                <ListView
-                    android:layout_marginTop="15dp"
-                    android:id="@+id/list_news"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:divider="@null" />
-            </LinearLayout>
         </LinearLayout>
 
     </RelativeLayout>

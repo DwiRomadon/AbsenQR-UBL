@@ -15,8 +15,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.project.absenubl.AbsensiUBL;
@@ -55,6 +57,12 @@ public class PilihMatakuliah extends AppCompatActivity {
     Calendar calendar;
     SimpleDateFormat dayFormat;
     SimpleDateFormat df,df1,df2;
+    private String nidn;
+
+    int socketTimeout = 30000;
+    RetryPolicy policy = new DefaultRetryPolicy(socketTimeout,
+            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +83,7 @@ public class PilihMatakuliah extends AppCompatActivity {
         list.setAdapter(adapter);
 
         Intent intent = getIntent();
-        final String nidn   = intent.getStringExtra("nidn");
+        nidn   = intent.getStringExtra("nidn");
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -115,7 +123,7 @@ public class PilihMatakuliah extends AppCompatActivity {
             System.out.println("Sorry your day is wrong");
         }
 
-        getMatakuliah(nidn, kodeHari,String.valueOf(df.format(calendar.getTime())),
+        getCodeMKAndNameMK(nidn, kodeHari,String.valueOf(df.format(calendar.getTime())),
                 String.valueOf(df.format(calendar.getTime())));
 
     }
@@ -141,8 +149,98 @@ public class PilihMatakuliah extends AppCompatActivity {
         }
     }
 
+
     // Fungsi get JSON Mahasiswa
-    private void getMatakuliah(final String nidn, final String kodeHari, final String jamAwal, final String jamAkhir) {
+    private void getCodeMKAndNameMK(final String nidn, final String kodeHari, final String jamAwal, final String jamAkhir) {
+
+        String tag_string_req = "req";
+
+        pDialog.setMessage("Loading.....");
+        showDialog();
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                Config_URL.base_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d(String.valueOf(getApplication()), "Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    if(!error){
+                        String noMk         = jObj.getString("NoMK");
+                        String kls          = jObj.getString("Kelas");
+
+                        getMatakuliah(nidn,noMk, String.valueOf(df.format(calendar.getTime())),
+                                String.valueOf(df.format(calendar.getTime())),kls);
+
+                    }else {
+                        String error_msg = jObj.getString("error_msg");
+                        //Toast.makeText(getApplicationContext(),
+                        //        error_msg + " Atau tutup aplikasi dan masuk kembali", Toast.LENGTH_LONG).show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(PilihMatakuliah.this);
+                        builder.setTitle(Html.fromHtml("<font color='#2980B9'><b>Peringatan !</b></font>"));
+                        builder.setMessage(Html.fromHtml("<font color='#2980B9'><b>"+error_msg+"</b></font>"))
+                                .setCancelable(false)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        Intent a = new Intent(PilihMatakuliah.this, AbsensiUBL.class);
+                                        startActivity(a);
+                                        finish();
+                                    }
+                                }).show();
+                    }
+
+                }catch (JSONException e){
+                    //JSON error
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener(){
+
+            @Override
+            public void onErrorResponse(VolleyError error){
+                Log.e(String.valueOf(getApplication()), "Error : " + error.getMessage());
+                error.printStackTrace();
+                ImageView image = new ImageView(PilihMatakuliah.this);
+                image.setImageResource(R.drawable.ic_check_connection);
+                AlertDialog.Builder builder = new AlertDialog.Builder(PilihMatakuliah.this);
+                builder.setTitle(Html.fromHtml("<font color='#2980B9'><b></b></font>"))
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent a = new Intent(PilihMatakuliah.this, AbsensiUBL.class);
+                                startActivity(a);
+                                finish();
+                            }
+                        }).setView(image)
+                        .show();
+                hideDialog();
+            }
+        }){
+
+            @Override
+            protected Map<String, String> getParams(){
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("tag","getKodeKelas");
+                params.put("nidn", nidn);
+                params.put("kdhari", kodeHari);
+                params.put("jamawal", jamAwal);
+                params.put("jamakhir", jamAkhir);
+                return params;
+            }
+        };
+
+        strReq.setRetryPolicy(policy);
+        AppController.getInstance().addToRequestQueue(strReq,tag_string_req);
+
+    }
+
+
+    // Fungsi get JSON Mahasiswa
+    private void getMatakuliah(final String nidn, final String noMk, final String jamAwal, final String jamAkhir, final String kelas) {
 
         String tag_string_req = "req";
 
@@ -226,9 +324,10 @@ public class PilihMatakuliah extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("tag","checkMatakuliah");
                 params.put("nidn", nidn);
-                params.put("kodehari", kodeHari);
+                params.put("nomk", noMk);
                 params.put("jamawal", jamAwal);
                 params.put("jamakhir", jamAkhir);
+                params.put("kelas", kelas);
                 return params;
             }
         };

@@ -81,7 +81,8 @@
         <activity android:name="com.newversion.AksenAja" />
         <activity android:name="com.newversion.BeritaAcaraDosen" />
         <activity android:name=".SmartClass" />
-        <activity android:name="com.newversion.PilihMatakuliah"></activity>
+        <activity android:name="com.newversion.PilihMatakuliah" />
+        <activity android:name="com.newversion.ListMhsAbsen"></activity>
     </application>
 
 </manifest>
