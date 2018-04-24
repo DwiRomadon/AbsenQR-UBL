@@ -3,6 +3,8 @@ package com.newversion;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -875,6 +877,7 @@ public class NewAbsen extends AppCompatActivity {
                 a.putExtra("tglabsen",String.valueOf(df1.format(calendar.getTime())) );
                 a.putExtra("mk",namaMK);
                 startActivity(a);
+                finish();
             }
         });
 

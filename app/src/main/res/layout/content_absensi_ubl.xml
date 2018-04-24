@@ -81,5 +81,13 @@
             android:src="@drawable/univ"
             android:layout_weight="0.56"
             android:id="@+id/imageView3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Absen QR V2.0"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#fff" />
     </LinearLayout>
 </RelativeLayout>

@@ -4,12 +4,15 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -52,9 +55,11 @@ public class ListMhsAbsen extends AppCompatActivity {
 
     TextView nomk, tglabsen, nama;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_list_mhs_absen);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("List Mhs Absen");
@@ -72,9 +77,9 @@ public class ListMhsAbsen extends AppCompatActivity {
         String tglAbsenn  = intent.getStringExtra("tglabsen");
         String mk  = intent.getStringExtra("mk");
 
-        nama.setText("\u25CF Nama MK\t\t\t\t\t: " + mk);
-        nomk.setText("\u25CF Kode Matakuliah\t: "+kodeMatkul);
-        tglabsen.setText("\u25CF Tanggal Absen\t\t: " + tglAbsenn);
+        nama.setText("\u25CF Nama MK\t\t: " + mk);
+        nomk.setText("\u25CF Kode MK\t\t\t: "+kodeMatkul);
+        tglabsen.setText("\u25CF TGL Absen\t: " + tglAbsenn);
 
         list = (ListView) findViewById(R.id.list_news);
         newsList.clear();
@@ -87,7 +92,7 @@ public class ListMhsAbsen extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent a = new Intent(ListMhsAbsen.this, NewAbsen.class);
+        Intent a = new Intent(ListMhsAbsen.this, AbsensiUBL.class);
         startActivity(a);
         finish();
     }
@@ -149,7 +154,7 @@ public class ListMhsAbsen extends AppCompatActivity {
                                 .setCancelable(false)
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
-                                        Intent a = new Intent(ListMhsAbsen.this, NewAbsen.class);
+                                        Intent a = new Intent(ListMhsAbsen.this, AbsensiUBL.class);
                                         startActivity(a);
                                         finish();
                                     }
